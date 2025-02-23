@@ -52,8 +52,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: bold;
     margin-right: 1vw;
+    font-family: 'Roboto', sans-serif;
 }
 
 .groupName {

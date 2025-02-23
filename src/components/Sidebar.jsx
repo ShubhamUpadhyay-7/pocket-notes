@@ -11,7 +11,6 @@ const Sidebar = ({ onSelectGroup }) => {
         setGroups(storedGroups);
     }, []);
 
-    // Function to add a new group
     const handleCreateGroup = (groupName, groupColor) => {
         const initials = groupName
             .split(' ')
@@ -22,18 +21,18 @@ const Sidebar = ({ onSelectGroup }) => {
             name: groupName,
             color: groupColor,
             initials,
-            messages: [], // Each group now has its own messages array
+            messages: [],
         };
 
         const updatedGroups = [...groups, newGroup];
         setGroups(updatedGroups);
-        localStorage.setItem('groups', JSON.stringify(updatedGroups)); // Save to localStorage
+        localStorage.setItem('groups', JSON.stringify(updatedGroups));
         setIsModalOpen(false);
     };
 
-    // Handle group selection
+    // Select a group
     const handleGroupClick = (group) => {
-        onSelectGroup(group); // Pass the selected group to the parent component
+        onSelectGroup(group);
     };
 
     return (
@@ -45,7 +44,7 @@ const Sidebar = ({ onSelectGroup }) => {
                         <div
                             key={index}
                             className={styles.groupItem}
-                            onClick={() => handleGroupClick(group)} // Pass selected group
+                            onClick={() => handleGroupClick(group)}
                         >
                             <div
                                 className={styles.groupDP}
@@ -58,13 +57,11 @@ const Sidebar = ({ onSelectGroup }) => {
                     ))}
                 </div>
 
-                {/* Plus button for creating a new group */}
                 <div className={styles.plusButton} onClick={() => setIsModalOpen(true)}>
                     +
                 </div>
             </div>
 
-            {/* Modal for creating a new group */}
             <Modal
                 isOpen={isModalOpen}
                 onCreate={handleCreateGroup}
@@ -75,3 +72,6 @@ const Sidebar = ({ onSelectGroup }) => {
 };
 
 export default Sidebar;
+
+
+
