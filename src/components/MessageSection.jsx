@@ -3,9 +3,10 @@ import React, { useState } from 'react';
 import img1 from '../assets/pocket-notes.png';
 import img2 from '../assets/Vector (9).png';
 import sendIcon from '../assets/Vector (10).png';
+import backIcon from '../assets/vetor 11.png';
 import styles from './MessageSection.module.css';
 
-const MessageSection = ({ selectedGroup, setSelectedGroup, onSendMessage }) => {
+const MessageSection = ({ selectedGroup, setSelectedGroup, onSendMessage, onBack }) => {
     const [newMessage, setNewMessage] = useState('');
 
     const handleSendMessage = () => {
@@ -31,7 +32,7 @@ const MessageSection = ({ selectedGroup, setSelectedGroup, onSendMessage }) => {
         return (
             <div className={styles.homeRight}>
                 <div className={styles.rightContent}>
-                    <img src={img1} alt="pocket-notes" />
+                    <img src={img1} className={styles.img1} alt="pocket-notes" />
                     <h1 className={styles.rightHeading}>Pocket Notes</h1>
                     <p className={styles.rightPara}>
                         Send and receive messages without keeping your phone online.
@@ -51,6 +52,9 @@ const MessageSection = ({ selectedGroup, setSelectedGroup, onSendMessage }) => {
     return (
         <div className={styles.messageSection}>
             <div className={styles.header}>
+                <div className={styles.mobileBackButton} onClick={onBack}>
+                    <img src={backIcon} alt="Back" />
+                </div>
                 <div
                     className={styles.groupDP}
                     style={{ backgroundColor: selectedGroup.color }}

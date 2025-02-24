@@ -88,3 +88,55 @@
     margin-top: 1.5vh;
     align-self: flex-end;
 }
+
+.colorCircle:hover {
+    transform: scale(1.1);
+}
+
+.selected {
+    border: 3px solid #000;
+    /* Black border for selection */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+@media only screen and (max-width: 700px) {
+    .modalContent {
+        background: white;
+        border-radius: 0.4vw;
+        width: 70vw;
+        border-radius: 5px;
+        height: 30vh;
+        padding: 1.8vh 2vw;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .modalContent h2 {
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+    }
+
+    .label1 {
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        font-size: 12px;
+    }
+
+    .label2 {
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        font-size: 12px;
+    }
+
+    .input {
+        width: 45vw;
+        font-size: 16px;
+    }
+
+    .createButton {
+        width: 80%;
+        align-self: center;
+        font-size: 16px;
+        border-radius: 4px;
+    }
+}

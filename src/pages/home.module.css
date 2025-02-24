@@ -3,4 +3,11 @@
 .homeContainer {
     display: flex;
     flex-direction: row;
+    height: 100vh;
+}
+
+@media screen and (max-width: 700px) {
+    .homeContainer {
+        flex-direction: column;
+    }
 }
